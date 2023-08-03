@@ -11,7 +11,8 @@
 [![Testing - Pytest](https://img.shields.io/badge/Testing-Pytest-orange.svg)](https://github.com/pytest-dev/pytest)
 
 This repo contains `jinjanator-plugin-format-toml`, a plugin which
-provides an TOML parser for the [Jinjanator](https://github.com/kpfleming/jinjanator) tool.
+provides a TOML parser for the
+[Jinjanator](https://github.com/kpfleming/jinjanator) tool.
 
 Open Source software: [Apache License 2.0](https://spdx.org/licenses/Apache-2.0.html)
 
