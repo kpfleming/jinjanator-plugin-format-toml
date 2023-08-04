@@ -87,31 +87,32 @@ dependencies = [
     "black",
     "ruff",
     "mypy",
+    "pyproject-fmt",
     # tomli has to be installed because mypy has been told to simulate Python 3.8
     "tomli >= 1.1.0",
 ]
 
 [tool.hatch.envs.lint.scripts]
 lint = [
-     "black --preview src tests",
-     "ruff check --fix -- src tests",
+     "ruff check --fix --show-fixes .",
+     "black --preview .",
      "mypy --package jinjanator_plugin_format_toml",
      "mypy tests",
      "shellcheck workflow-support/*.sh",
+     "pyproject-fmt pyproject.toml",
 ]
 lint-action = [
-     "black --check --diff --preview src tests",
-     "ruff check --format=github -- src tests",
+     "ruff check --format=github .",
+     "black --check --diff --preview .",
      "mypy --package jinjanator_plugin_format_toml",
      "mypy tests",
      "shellcheck workflow-support/*.sh",
+     "pyproject-fmt --check pyproject.toml",
 ]
 
 [tool.hatch.envs.ci]
 dependencies = [
-    "attrs",
     "coverage[toml]",
-    "jinjanator",
     "pytest",
     "pytest-cov",
     "pytest-icdiff",
@@ -176,6 +177,7 @@ replacement = "[#\\1](https://github.com/kpfleming/jinjanator-plugin-format-toml
 
 [tool.black]
 line-length = 90
+target-version = ["py38"]
 
 [tool.ruff]
 src = ["src", "tests"]
