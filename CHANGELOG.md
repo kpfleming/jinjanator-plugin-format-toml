@@ -28,6 +28,14 @@ See https://github.com/kpfleming/jinjanator-plugin-format-toml/blob/main/.github
 
 <!-- towncrier release notes start -->
 
+## [23.2.0](https://github.com/kpfleming/jinjanator-plugin-format-toml/tree/23.2.0) - 2023-10-07
+
+### Additions
+
+- Added Python 3.12 support.
+  [#2](https://github.com/kpfleming/jinjanator-plugin-format-toml/issues/2)
+
+
 ## [23.1.0](https://github.com/kpfleming/jinjanator-plugin-format-toml/tree/23.1.0) - 2023-08-03
 
 Initial release!
