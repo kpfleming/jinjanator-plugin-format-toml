@@ -85,7 +85,7 @@ python = "3.12"
 
 [tool.hatch.envs.lint]
 dependencies = [
-    "ruff>=0.1.3",
+    "ruff>=0.2.0",
     "mypy",
     "pyproject-fmt",
     # tomli has to be installed because mypy has been told to simulate Python 3.8
@@ -94,16 +94,16 @@ dependencies = [
 
 [tool.hatch.envs.lint.scripts]
 lint = [
-     "ruff format .",
-     "ruff check --output-format=grouped --fix --show-source --show-fixes .",
+     "ruff format",
+     "ruff check --output-format=full --fix --show-fixes",
      "mypy --package jinjanator_plugin_format_toml",
      "mypy tests",
      "shellcheck workflow-support/*.sh",
      "pyproject-fmt pyproject.toml",
 ]
 lint-action = [
-     "ruff format --check --diff .",
-     "ruff check --output-format=github .",
+     "ruff format --check --diff",
+     "ruff check --output-format=github",
      "mypy --package jinjanator_plugin_format_toml",
      "mypy tests",
      "shellcheck workflow-support/*.sh",
@@ -177,12 +177,11 @@ replacement = "[#\\1](https://github.com/kpfleming/jinjanator-plugin-format-toml
 
 [tool.ruff]
 src = ["src", "tests"]
-ignore-init-module-imports = true
 line-length = 100
 
 [tool.ruff.lint]
+ignore-init-module-imports = true
 select = ["ALL"]
-
 ignore = [
   "ANN",      # Mypy is better at this.
   "COM812",   # conflicts with formatter
@@ -202,7 +201,7 @@ unfixable = ["F401"]
   "SIM300",  # Yoda rocks in tests
 ]
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 lines-between-types = 1
 lines-after-imports = 2
 
