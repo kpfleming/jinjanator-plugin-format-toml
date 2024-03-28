@@ -8,7 +8,7 @@ requires = [
 
 [project]
 name = "jinjanator-plugin-format-toml"
-description = "Plugin which provides TOML format (data input) support for Jinjanator"
+description = "Plugin which provides TOML format (data input) support for jinjanator"
 license = { text="Apache-2.0" }
 authors = [
   { name="Kevin P. Fleming", email="jinjanator@kevin.km6g.us" },
@@ -142,7 +142,7 @@ content-type = "text/markdown"
 
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
 text = """
-# *jinjanator-plugin-format-toml*: Provides TOML format (data input) support for Jinjanator
+# *jinjanator-plugin-format-toml*: Provides TOML format (data input) support for jinjanator
 
 """
 

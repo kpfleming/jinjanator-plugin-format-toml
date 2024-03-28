@@ -12,14 +12,14 @@
 
 This repo contains `jinjanator-plugin-format-toml`, a plugin which
 provides a TOML parser for the
-[Jinjanator](https://github.com/kpfleming/jinjanator) tool.
+[jinjanator](https://github.com/kpfleming/jinjanator) tool.
 
 Open Source software: [Apache License 2.0](https://spdx.org/licenses/Apache-2.0.html)
 
 ## &nbsp;
 <!-- fancy-readme start -->
 
-This plugin allows Jinjanator to parse TOML data for processing in
+This plugin allows jinjanator to parse TOML data for processing in
 templates. The format can be selected using `--format toml` or
 autoselected by using a data file with a name ending with `.toml`.
 
@@ -64,7 +64,7 @@ This format does not support any options.
 
 ## Chat
 
-If you'd like to chat with the Jinjanator community, join us on
+If you'd like to chat with the jinjanator community, join us on
 [Matrix](https://matrix.to/#/#jinjanator:km6g.us)!
 
 ## Credits
