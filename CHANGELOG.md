@@ -28,6 +28,13 @@ See https://github.com/kpfleming/jinjanator-plugin-format-toml/blob/main/.github
 
 <!-- towncrier release notes start -->
 
+## [24.1.0](https://github.com/kpfleming/jinjanator-plugin-format-toml/tree/24.1.0) - 2024-04-27
+
+### Changes
+
+- Upgraded to version 24.1 of jinjanator-plugins.
+  
+
 ## [23.2.0](https://github.com/kpfleming/jinjanator-plugin-format-toml/tree/23.2.0) - 2023-10-07
 
 ### Additions
