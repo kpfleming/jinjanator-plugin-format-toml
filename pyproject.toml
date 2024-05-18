@@ -9,9 +9,9 @@ requires = [
 [project]
 name = "jinjanator-plugin-format-toml"
 description = "Plugin which provides TOML format (data input) support for jinjanator"
-license = { text="Apache-2.0" }
+license = { text = "Apache-2.0" }
 authors = [
-  { name="Kevin P. Fleming", email="jinjanator@kevin.km6g.us" },
+  { name = "Kevin P. Fleming", email = "jinjanator@kevin.km6g.us" },
 ]
 requires-python = ">=3.8"
 classifiers = [
@@ -35,13 +35,11 @@ dynamic = [
 ]
 dependencies = [
   "jinjanator-plugins==24.1.*",
-  'tomli>=1.1; python_version < "3.11"',
+  "tomli>=1.1; python_version<'3.11'",
 ]
-[project.urls]
-"Bug Tracker" = "https://github.com/kpfleming/jinjanator-plugin-format-toml/issues"
-"Homepage" = "https://github.com/kpfleming/jinjanator-plugin-format-toml"
-[project.entry-points.jinjanator]
-format_toml = "jinjanator_plugin_format_toml.plugin"
+urls."Bug Tracker" = "https://github.com/kpfleming/jinjanator-plugin-format-toml/issues"
+urls."Homepage" = "https://github.com/kpfleming/jinjanator-plugin-format-toml"
+entry-points.jinjanator.format_toml = "jinjanator_plugin_format_toml.plugin"
 
 [tool.hatch.envs.changelog]
 skip-install = true
@@ -70,14 +68,14 @@ exclude = [
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "src",
-    "tests",
-    "*.md",
+  "src",
+  "tests",
+  "*.md",
 ]
 
 [tool.hatch.build.targets.wheel]
 packages = [
-    "src/jinjanator_plugin_format_toml",
+  "src/jinjanator_plugin_format_toml",
 ]
 
 [tool.hatch.envs.default]
@@ -85,54 +83,54 @@ python = "3.12"
 
 [tool.hatch.envs.lint]
 dependencies = [
-    "ruff>=0.2.0",
-    "mypy",
-    "pyproject-fmt",
-    # tomli has to be installed because mypy has been told to simulate Python 3.8
-    "tomli >= 1.1.0",
+  "ruff>=0.2.0",
+  "mypy",
+  "pyproject-fmt",
+  # tomli has to be installed because mypy has been told to simulate Python 3.8
+  "tomli >= 1.1.0",
 ]
 
 [tool.hatch.envs.lint.scripts]
 lint = [
-     "ruff format",
-     "ruff check --output-format=full --fix --show-fixes",
-     "mypy --package jinjanator_plugin_format_toml",
-     "mypy tests",
-     "shellcheck workflow-support/*.sh",
-     "pyproject-fmt pyproject.toml",
+  "ruff format",
+  "ruff check --output-format=full --fix --show-fixes",
+  "mypy --package jinjanator_plugin_format_toml",
+  "mypy tests",
+  "shellcheck workflow-support/*.sh",
+  "pyproject-fmt pyproject.toml",
 ]
 lint-action = [
-     "ruff format --check --diff",
-     "ruff check --output-format=github",
-     "mypy --package jinjanator_plugin_format_toml",
-     "mypy tests",
-     "shellcheck workflow-support/*.sh",
-     "pyproject-fmt --check pyproject.toml",
+  "ruff format --check --diff",
+  "ruff check --output-format=github",
+  "mypy --package jinjanator_plugin_format_toml",
+  "mypy tests",
+  "shellcheck workflow-support/*.sh",
+  "pyproject-fmt --check pyproject.toml",
 ]
 
 [tool.hatch.envs.ci]
 dependencies = [
-    "coverage[toml]",
-    "pytest",
-    "pytest-cov",
-    "pytest-icdiff",
+  "coverage[toml]",
+  "pytest",
+  "pytest-cov",
+  "pytest-icdiff",
 ]
 
 [[tool.hatch.envs.ci.matrix]]
 python = [
-"3.8",
-"3.9",
-"3.10",
-"3.11",
-"3.12",
-"3.13",
+  "3.8",
+  "3.9",
+  "3.10",
+  "3.11",
+  "3.12",
+  "3.13",
 ]
 
 [tool.hatch.envs.ci.scripts]
 ci = [
-    "rm -f .coverage",
-    "pytest --verbose --cov-append  --cov-branch --cov=jinjanator_plugin_format_toml",
-    "coverage report --show-missing --fail-under=100",
+  "rm -f .coverage",
+  "pytest --verbose --cov-append  --cov-branch --cov=jinjanator_plugin_format_toml",
+  "coverage report --show-missing --fail-under=100",
 ]
 
 [tool.hatch.metadata]
@@ -177,44 +175,46 @@ pattern = "#(\\d+)"
 replacement = "[#\\1](https://github.com/kpfleming/jinjanator-plugin-format-toml/issues/\\1)"
 
 [tool.ruff]
-src = ["src", "tests"]
 line-length = 100
 
-[tool.ruff.lint]
-ignore-init-module-imports = true
-select = ["ALL"]
-ignore = [
-  "ANN",      # Mypy is better at this.
-  "COM812",   # conflicts with formatter
-  "C901",     # Leave complexity to me.
-  "D",        # We have different ideas about docstrings.
-  "ISC001",   # conflicts with formatter
-  "PLR0912",  # Leave complexity to me.
-  "TRY301",   # Raise in try blocks can totally make sense.
+src = [
+  "src",
+  "tests",
 ]
-unfixable = ["F401"]
-
-[tool.ruff.lint.per-file-ignores]
-"tests/*" = [
+lint.select = [
+  "ALL",
+]
+lint.per-file-ignores."tests/*" = [
   "PLC1901", # empty strings are falsey, but are less specific in tests
   "PT005",   # we use always underscores and explicit names
   "S101",    # assert
   "SIM300",  # Yoda rocks in tests
 ]
-
-[tool.ruff.lint.isort]
-lines-between-types = 1
-lines-after-imports = 2
+lint.unfixable = [
+  "F401",
+]
+lint.isort.lines-after-imports = 2
+lint.isort.lines-between-types = 1
+lint.ignore = [
+  "ANN",     # Mypy is better at this.
+  "C901",    # Leave complexity to me.
+  "COM812",  # conflicts with formatter
+  "D",       # We have different ideas about docstrings.
+  "ISC001",  # conflicts with formatter
+  "PLR0912", # Leave complexity to me.
+  "TRY301",  # Raise in try blocks can totally make sense.
+]
+lint.ignore-init-module-imports = true
 
 [tool.pytest.ini_options]
 minversion = "6.0"
 xfail_strict = true
 testpaths = [
-    "tests",
+  "tests",
 ]
 addopts = [
-    "-ra",
-    "--strict-markers",
+  "-ra",
+  "--strict-markers",
 ]
 
 [tool.towncrier]
@@ -226,7 +226,11 @@ start_string = "<!-- towncrier release notes start -->\n"
 template = "changelog.d/towncrier_template.md.jinja"
 title_format = ""
 issue_format = "[#{issue}](https://github.com/kpfleming/jinjanator-plugin-format-toml/issues/{issue})"
-underlines = ["", "", ""]
+underlines = [
+  "",
+  "",
+  "",
+]
 
 [[tool.towncrier.section]]
 path = ""
