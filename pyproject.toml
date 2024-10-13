@@ -34,7 +34,7 @@ dynamic = [
   "version",
 ]
 dependencies = [
-  "jinjanator-plugins==24.1.*",
+  "jinjanator-plugins==24.2.*",
   "tomli>=1.1; python_version<'3.11'",
 ]
 urls."Bug Tracker" = "https://github.com/kpfleming/jinjanator-plugin-format-toml/issues"
