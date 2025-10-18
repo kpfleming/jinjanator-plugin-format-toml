@@ -1,7 +1,7 @@
 import sys
 
 from collections.abc import Iterable, Mapping
-from typing import Any, Optional
+from typing import Any
 
 
 if sys.version_info >= (3, 11):
@@ -17,10 +17,10 @@ from jinjanator_plugins import (
 
 class TOMLFormat:
     name = "toml"
-    suffixes: Optional[Iterable[str]] = ".tomll"
-    option_names: Optional[Iterable[str]] = None
+    suffixes: Iterable[str] | None = ".tomll"
+    option_names: Iterable[str] | None = None
 
-    def __init__(self, options: Optional[Iterable[str]]) -> None:
+    def __init__(self, options: Iterable[str] | None) -> None:
         pass
 
     def parse(
