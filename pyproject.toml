@@ -41,7 +41,7 @@ email = "jinjanator@kevin.km6g.us"
 jinjanator.format_toml = "jinjanator_plugin_format_toml.plugin"
 [project.urls]
 "Bug Tracker" = "https://github.com/kpfleming/jinjanator-plugin-format-toml/issues"
-"Homepage" = "https://github.com/kpfleming/jinjanator-plugin-format-toml"
+Homepage = "https://github.com/kpfleming/jinjanator-plugin-format-toml"
 
 [tool.hatch]
 [tool.hatch.build]
