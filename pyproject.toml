@@ -128,27 +128,33 @@ text = """
 # *jinjanator-plugin-format-toml*: Provides TOML format (data input) support for jinjanator
 
 """
+
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
 path = "README.md"
 start-after = "<!-- fancy-readme start -->"
 end-before = "<!-- fancy-readme end -->"
+
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
 text = """
 ## Release Information
 """
+
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
 path = "CHANGELOG.md"
 start-after = "<!-- towncrier release notes start -->"
 pattern = "\n(###.+?\n)## "
+
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
 text = """
 ---
+
 [→ Full Changelog](https://github.com/kpfleming/jinjanator-plugin-format-toml/blob/main/CHANGELOG.md)
 """
 
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
 pattern = "\\[(.+?)\\]\\(((?!https?://)\\S+?)\\)"
 replacement = "[\\1](https://github.com/kpfleming/jinjanator-plugin-format-toml/tree/main/\\g<2>)"
+
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
 pattern = "#(\\d+)"
 replacement = "[#\\1](https://github.com/kpfleming/jinjanator-plugin-format-toml/issues/\\1)"
