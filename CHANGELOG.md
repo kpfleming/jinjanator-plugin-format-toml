@@ -28,6 +28,17 @@ See https://github.com/kpfleming/jinjanator-plugin-format-toml/blob/main/.github
 
 <!-- towncrier release notes start -->
 
+## [26.1.0](https://github.com/kpfleming/jinjanator-plugin-format-toml/tree/26.1.0) - 2026-10-12
+
+### Backwards-incompatible Changes
+
+- Support for Python 3.10 has been removed. Since the minimum supported
+  version is now 3.11, the code has been updated to use features
+  introduced in that version.
+  
+- Upgrade to version 26.1.0 of jinjanator-plugins.
+  
+
 ## [25.1.0](https://github.com/kpfleming/jinjanator-plugin-format-toml/tree/25.1.0) - 2025-10-18
 
 ### Backwards-incompatible Changes
