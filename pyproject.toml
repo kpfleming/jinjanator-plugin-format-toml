@@ -30,8 +30,7 @@ dynamic = [
   "version",
 ]
 dependencies = [
-  "jinjanator-plugins==25.1.*",
-  "tomli>=1.1; python_version<'3.11'",
+  "jinjanator-plugins==26.1.*",
 ]
 [[project.authors]]
 name = "Kevin P. Fleming"
