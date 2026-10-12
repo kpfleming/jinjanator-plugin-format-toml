@@ -1,13 +1,7 @@
-import sys
+import tomllib
 
 from collections.abc import Iterable, Mapping
 from typing import Any
-
-
-if sys.version_info >= (3, 11):
-    import tomllib  # pragma: no cover
-else:
-    import tomli as tomllib  # pragma: no cover
 
 from jinjanator_plugins import (
     Formats,
@@ -17,7 +11,7 @@ from jinjanator_plugins import (
 
 class TOMLFormat:
     name = "toml"
-    suffixes: Iterable[str] | None = ".tomll"
+    suffixes: Iterable[str] | None = ".toml"
     option_names: Iterable[str] | None = None
 
     def __init__(self, options: Iterable[str] | None) -> None:
