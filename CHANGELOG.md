@@ -28,6 +28,13 @@ See https://github.com/kpfleming/jinjanator-plugin-format-toml/blob/main/.github
 
 <!-- towncrier release notes start -->
 
+## [26.2.0](https://github.com/kpfleming/jinjanator-plugin-format-toml/tree/26.2.0) - 2026-10-12
+
+### Backwards-incompatible Changes
+
+- Apply changes that were not included in 26.1.0.
+  
+
 ## [26.1.0](https://github.com/kpfleming/jinjanator-plugin-format-toml/tree/26.1.0) - 2026-10-12
 
 ### Backwards-incompatible Changes
